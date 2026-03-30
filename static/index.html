@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🔗 URL Shortener</h1>
+
+    <div class="card">
+        <h3>Create Short URL</h3>
+        <form action="/shorten" method="POST">
+            <input type="text" name="url" placeholder="Enter URL" required />
+            <input type="text" name="alias" placeholder="Custom Alias (optional)" />
+            <input type="text" name="expiry" placeholder="Active days (optional)" />
+            <button type="submit">Shorten</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Update Alias</h3>
+        <form action="/update" method="POST">
+            <input type="text" name="old_alias" placeholder="Old Alias" required />
+            <input type="text" name="new_alias" placeholder="New Alias" required />
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Delete Alias</h3>
+        <form action="/delete" method="POST">
+            <input type="text" name="alias" placeholder="Alias to Delete" required />
+            <button class="danger" type="submit">Delete</button>
+        </form>
+    </div>
+
+    <div class="card center">
+        <form action="/all" method="GET">
+            <button class="secondary">View All URLs</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
